@@ -1,3 +1,23 @@
-<section class="w-4/5 mx-auto bg-container">
-  <h1 class="text-[2rem]">Our Collection</h1>
+---
+import vector from "../assets/img/vector.svg";
+import Content from "../components/Content.astro";
+---
+
+<section
+  class="w-4/5 mx-auto bg-container -translate-y-24 overflow-hidden py-20 px-10 rounded-3xl"
+>
+  <div class="max-w-96 mx-auto relative">
+    <h1 class="text-[2rem] text-center mb-2">Our Collection</h1>
+    <p class="text-center text-active">
+      Introducing our Coffee Collection, a selection of unique coffees from
+      different roast types and origins, expertly roasted in small batches and
+      shipped fresh weekly.
+    </p>
+    <img
+      src={vector.src}
+      alt="vector background"
+      class="absolute -right-16 -top-14 w-80 -z-10"
+    />
+  </div>
+  <Content />
 </section>

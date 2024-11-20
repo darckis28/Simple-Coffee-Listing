@@ -1,0 +1,28 @@
+---
+import getData from "../services/getData.js";
+import Card from "./Card.astro";
+
+const coffes = await getData();
+---
+
+<div class="flex gap-5 justify-center my-8">
+  <button class="bg-active py-2 px-4 rounded-lg cursor-pointer"
+    >All Products</button
+  >
+  <button class="py-2 px-4 rounded-lg">Available Now</button>
+</div>
+<ul class="grid px-8 gap-16 lg:grid-cols-2 xl:grid-cols-3">
+  {
+    coffes.map((coffe) => (
+      <Card
+        name={coffe.name}
+        image={coffe.image}
+        rating={coffe.rating}
+        available={coffe.available}
+        price={coffe.price}
+        popular={coffe.popular}
+        votes={coffe.votes}
+      />
+    ))
+  }
+</ul>
